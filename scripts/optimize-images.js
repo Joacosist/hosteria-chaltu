@@ -10,14 +10,14 @@ const OUT = path.join(ROOT, "web", "assets", "img");
 // options.crop = { top, left, width, height } in fractions of the source (0-1), applied before resize
 // options.sharpen = true to apply a light sharpen pass (useful for hero-sized images)
 const jobs = [
-  // Hero — aerial, high-res source so full-bleed doesn't need to upscale
-  ["Exterior/Distancia playa .jpg", "exterior/hero-principal.jpg", 1800, 58, { sharpen: true }],
+  // Hero — pool at night (source is 1080px native, kept unscaled + light sharpen)
+  ["Servicios/Pileta noche.jpg", "exterior/hero-principal.jpg", 1400, 76, { sharpen: true }],
 
-  // Sobre Chaltu — ground-level facade, cropped to drop the empty grass at the bottom
+  // Sobre Chaltu — hotel facade at night
+  ["Exterior/Exterior noche.jpg", "exterior/hero-noche.jpg", 1400, 78, { sharpen: true }],
+
+  // Gallery extras
   ["Exterior/A-14-2.jpg", "exterior/fachada-bosque.jpg", 1400, 76, { crop: { top: 0, left: 0, width: 1, height: 0.78 } }],
-
-  // Gallery extras (previous hero/about picks, still good as gallery variety)
-  ["Exterior/Exterior noche.jpg", "exterior/hero-noche.jpg", 1400, 78],
   ["Exterior/Distancia playa .jpg", "exterior/aerea-bosque-mar.jpg", 1400, 74],
 
   // Exterior / Ubicacion
@@ -36,7 +36,6 @@ const jobs = [
 
   // Servicios
   ["Servicios/Pileta.jpg", "servicios/pileta-dia.jpg", 1400, 70],
-  ["Servicios/Pileta noche.jpg", "servicios/pileta-noche.jpg", 1400, 72],
   ["Servicios/pileta2.jpg", "servicios/pileta-deck.jpg", 1400, 70],
   ["Servicios/SPA.jpg", "servicios/spa.jpg", 1200, 72],
   ["Servicios/Gym.jpg", "servicios/gym.jpg", 1200, 72],
