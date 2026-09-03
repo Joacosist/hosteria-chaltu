@@ -6,13 +6,19 @@ const ROOT = path.resolve(__dirname, "..");
 const SRC = path.join(ROOT, "Fotos y videos");
 const OUT = path.join(ROOT, "web", "assets", "img");
 
-// [srcRelativePath, outRelativePath, maxWidth, quality]
+// [srcRelativePath, outRelativePath, maxWidth, quality, options]
+// options.crop = { top, left, width, height } in fractions of the source (0-1), applied before resize
+// options.sharpen = true to apply a light sharpen pass (useful for hero-sized images)
 const jobs = [
-  // Hero
-  ["Exterior/Exterior noche.jpg", "exterior/hero-noche.jpg", 2200, 78],
+  // Hero — aerial, high-res source so full-bleed doesn't need to upscale
+  ["Exterior/Distancia playa .jpg", "exterior/hero-principal.jpg", 1800, 58, { sharpen: true }],
 
-  // Sobre Chaltu
-  ["Exterior/Distancia playa .jpg", "exterior/aerea-bosque-mar.jpg", 1600, 70],
+  // Sobre Chaltu — ground-level facade, cropped to drop the empty grass at the bottom
+  ["Exterior/A-14-2.jpg", "exterior/fachada-bosque.jpg", 1400, 76, { crop: { top: 0, left: 0, width: 1, height: 0.78 } }],
+
+  // Gallery extras (previous hero/about picks, still good as gallery variety)
+  ["Exterior/Exterior noche.jpg", "exterior/hero-noche.jpg", 1400, 78],
+  ["Exterior/Distancia playa .jpg", "exterior/aerea-bosque-mar.jpg", 1400, 74],
 
   // Exterior / Ubicacion
   ["Exterior/A-11-2.jpg", "exterior/fachada-dia.jpg", 1400, 70],
@@ -42,15 +48,29 @@ const jobs = [
 ];
 
 async function run() {
-  for (const [src, out, width, quality] of jobs) {
+  for (const [src, out, width, quality, options = {}] of jobs) {
     const srcPath = path.join(SRC, src);
     const outPath = path.join(OUT, out);
     fs.mkdirSync(path.dirname(outPath), { recursive: true });
-    await sharp(srcPath)
-      .rotate() // auto-orient from EXIF
-      .resize({ width, withoutEnlargement: true })
-      .jpeg({ quality, progressive: true, mozjpeg: true })
-      .toFile(outPath);
+
+    let img = sharp(srcPath).rotate(); // auto-orient from EXIF
+
+    if (options.crop) {
+      const meta = await img.metadata();
+      const { top, left, width: cw, height: ch } = options.crop;
+      img = img.extract({
+        left: Math.round(left * meta.width),
+        top: Math.round(top * meta.height),
+        width: Math.round(cw * meta.width),
+        height: Math.round(ch * meta.height),
+      });
+    }
+
+    img = img.resize({ width, withoutEnlargement: true });
+
+    if (options.sharpen) img = img.sharpen({ sigma: 0.8 });
+
+    await img.jpeg({ quality, progressive: true, mozjpeg: true }).toFile(outPath);
     const size = fs.statSync(outPath).size;
     console.log(`${out} -> ${(size / 1024).toFixed(0)} KB`);
   }
