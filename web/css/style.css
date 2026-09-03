@@ -539,6 +539,7 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
 @media (min-width: 860px) {
   :root { --header-h: 92px; }
 
+  .header-inner { justify-content: center; gap: 56px; }
   .menu-toggle { display: none; }
   .main-nav {
     position: static;

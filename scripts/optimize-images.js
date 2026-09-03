@@ -39,10 +39,14 @@ const jobs = [
   ["Servicios/pileta2.jpg", "servicios/pileta-deck.jpg", 1400, 70],
   ["Servicios/SPA.jpg", "servicios/spa.jpg", 1200, 72],
   ["Servicios/Gym.jpg", "servicios/gym.jpg", 1200, 72],
+  ["Servicios/Pileta 3.jpg", "servicios/jacuzzi.jpg", 1400, 70],
+  ["Servicios/Pileta 4.jpg", "servicios/pileta-techada.jpg", 1400, 70],
+  ["Servicios/SPA 4.jpg", "servicios/sauna-toallas.jpg", 1200, 72],
 
   // Desayuno
   ["Desayuno/11.jpg", "desayuno/salon.jpg", 1400, 72],
   ["Desayuno/A-37.jpg", "desayuno/buffet.jpg", 1400, 70],
+  ["Desayuno/DSC_6338.jpg", "desayuno/buffet2.jpg", 1400, 70],
   ["Desayuno/DSC_6344.jpg", "desayuno/mesa.jpg", 1200, 72],
 ];
 
