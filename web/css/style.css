@@ -7,6 +7,9 @@
   --marron-tierra: #8B6B4C;
   --madera: #C9A27D;
 
+  --whatsapp-green: #25D366;
+  --whatsapp-green-dark: #128C7E;
+
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Lora', Georgia, serif;
 
@@ -131,10 +134,10 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
 .btn-outline-dark:hover { background: var(--verde-bosque); color: var(--marfil); }
 
 .btn-whatsapp {
-  background: var(--verde-hoja);
-  color: var(--marfil);
+  background: var(--whatsapp-green);
+  color: #fff;
 }
-.btn-whatsapp:hover { background: #6c7d5b; }
+.btn-whatsapp:hover { background: var(--whatsapp-green-dark); }
 
 /* ==================== HEADER ==================== */
 .site-header {
@@ -449,6 +452,7 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
 .footer-contact ul { display: grid; gap: 12px; margin-bottom: 1.5em; }
 .footer-contact li { display: flex; align-items: flex-start; gap: 10px; font-size: .95rem; }
 .footer-contact svg { flex-shrink: 0; margin-top: 3px; color: var(--madera); }
+.footer-contact svg.icon-wa { color: var(--whatsapp-green); }
 .footer-contact a:hover { text-decoration: underline; }
 .footer-booking-links { display: flex; flex-direction: column; gap: 10px; font-size: .88rem; }
 .footer-booking-links a { text-decoration: underline; text-underline-offset: 3px; color: var(--marfil); }
@@ -490,8 +494,8 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   z-index: 90;
   width: 56px; height: 56px;
   border-radius: 50%;
-  background: var(--verde-hoja);
-  color: var(--marfil);
+  background: var(--whatsapp-green);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
