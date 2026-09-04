@@ -39,7 +39,6 @@ const jobs = [
 
   // Servicios
   ["Servicios/Pileta.jpg", "servicios/pileta-dia.jpg", 1400, 70],
-  ["Servicios/pileta2.jpg", "servicios/pileta-deck.jpg", 1400, 70],
   ["Servicios/SPA.jpg", "servicios/spa.jpg", 1200, 72],
   ["Servicios/Gym.jpg", "servicios/gym.jpg", 1200, 72],
   ["Servicios/Pileta 3.jpg", "servicios/jacuzzi.jpg", 1400, 70],
