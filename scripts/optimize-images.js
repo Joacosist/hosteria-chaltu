@@ -10,8 +10,11 @@ const OUT = path.join(ROOT, "web", "assets", "img");
 // options.crop = { top, left, width, height } in fractions of the source (0-1), applied before resize
 // options.sharpen = true to apply a light sharpen pass (useful for hero-sized images)
 const jobs = [
-  // Hero — pool at night (source is 1080px native, kept unscaled + light sharpen)
-  ["Servicios/Pileta noche.jpg", "exterior/hero-principal.jpg", 1400, 76, { sharpen: true }],
+  // Hero — daytime facade, high-res source
+  ["Exterior/Principal.jpg", "exterior/hero-principal.jpg", 2000, 62, { sharpen: true }],
+
+  // Gallery — pool at night (repurposed from the previous hero)
+  ["Servicios/Pileta noche.jpg", "servicios/pileta-noche.jpg", 1400, 72],
 
   // Sobre Chaltu — hotel facade at night
   ["Exterior/Exterior noche.jpg", "exterior/hero-noche.jpg", 1400, 78, { sharpen: true }],

@@ -184,7 +184,7 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="inicio">
-    <img class="hero-bg" src="assets/img/exterior/hero-principal.jpg" alt="Piscina climatizada de Hostería Chaltu de noche" loading="eager" fetchpriority="high" width="1080" height="1350">
+    <img class="hero-bg" src="assets/img/exterior/hero-principal.jpg" alt="Fachada de Hostería Chaltu de día, entre árboles" loading="eager" fetchpriority="high" width="2000" height="1871">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="eyebrow" data-lang="es">Hostería Chaltu · Villa Gesell Norte</p>
@@ -198,9 +198,9 @@
       </h1>
 
       <p class="hero-sub">
-        <span data-lang="es">A 120 metros del mar, rodeados de bosque, en Villa Gesell Norte.</span>
-        <span data-lang="en" hidden>120 meters from the sea, surrounded by forest, in northern Villa Gesell.</span>
-        <span data-lang="pt" hidden>A 120 metros do mar, cercados por bosque, no norte de Villa Gesell.</span>
+        <span data-lang="es">A 120 metros del mar, rodeados de bosque, en <strong>Villa Gesell Norte</strong>.</span>
+        <span data-lang="en" hidden>120 meters from the sea, surrounded by forest, in <strong>northern Villa Gesell</strong>.</span>
+        <span data-lang="pt" hidden>A 120 metros do mar, cercados por bosque, no <strong>norte de Villa Gesell</strong>.</span>
       </p>
 
       <div class="hero-ctas">
@@ -218,7 +218,7 @@
   <!-- ============ SOBRE CHALTU ============ -->
   <section class="section about" id="sobre-chaltu">
     <div class="container about-grid">
-      <div class="about-text">
+      <div class="about-text reveal">
         <p class="kicker" data-lang="es">Sobre Chaltu</p>
         <p class="kicker" data-lang="en" hidden>About Chaltu</p>
         <p class="kicker" data-lang="pt" hidden>Sobre a Chaltu</p>
@@ -233,7 +233,7 @@
         <p data-lang="en" hidden>Chaltu is a retreat in northern Villa Gesell. A place where nature, warmth and true rest come together, so every guest can slow down and return to what matters. Set in a forest environment just 120 meters from the sea, with over 200 meters of clean sand beach, 10 blocks from downtown.</p>
         <p data-lang="pt" hidden>Chaltu é um refúgio no norte de Villa Gesell. Um lugar onde a natureza, a calidez e o verdadeiro descanso se encontram, para que cada hóspede possa desacelerar e voltar ao essencial. Situada em um ambiente de bosque a apenas 120 metros do mar, com praias de mais de 200 metros de areia limpa, a 10 quadras do centro comercial.</p>
       </div>
-      <div class="about-image">
+      <div class="about-image reveal">
         <img src="assets/img/exterior/hero-noche.jpg" alt="Hostería Chaltu de noche, fachada iluminada entre árboles" loading="lazy" width="1080" height="1350">
       </div>
     </div>
@@ -246,63 +246,60 @@
       <p class="kicker center" data-lang="en" hidden>Rooms</p>
       <p class="kicker center" data-lang="pt" hidden>Quartos</p>
 
-      <h2 class="center">
+      <h2 class="center reveal">
         <span data-lang="es">Descansá como en casa</span>
         <span data-lang="en" hidden>Rest like you're at home</span>
         <span data-lang="pt" hidden>Descanse como em casa</span>
       </h2>
 
-      <p class="section-intro center">
+      <p class="section-intro center reveal">
         <span data-lang="es">17 habitaciones amplias, con capacidad para 2 a 3 personas. Todas incluyen cochera individual descubierta, a 80 metros de la hostería, con cámaras de seguridad.</span>
         <span data-lang="en" hidden>17 spacious rooms, with capacity for 2 to 3 guests. All include an individual open-air parking spot, 80 meters from the hostería, with security cameras.</span>
         <span data-lang="pt" hidden>17 quartos amplos, com capacidade para 2 a 3 pessoas. Todos incluem vaga de estacionamento individual descoberta, a 80 metros da hospedaria, com câmeras de segurança.</span>
       </p>
 
       <div class="room-grid">
-        <article class="room-card" data-room="matrimonial">
-          <div class="room-card-media">
+        <article class="room-card reveal" data-room="matrimonial">
+          <button type="button" class="room-card-media" data-room-open aria-label="Ver más sobre Doble Matrimonial">
             <img src="assets/img/habitaciones/hab-matrimonial.jpg" alt="Habitación doble matrimonial con cama doble" loading="lazy" width="1200" height="1600">
-          </div>
+            <span class="room-card-scrim">
+              <span class="room-card-more"><span data-lang="es">Ver más</span><span data-lang="en" hidden>See more</span><span data-lang="pt" hidden>Ver mais</span></span>
+            </span>
+          </button>
           <div class="room-card-body">
             <h3><span data-lang="es">Doble Matrimonial</span><span data-lang="en" hidden>Double Room</span><span data-lang="pt" hidden>Quarto Duplo</span></h3>
             <p><span data-lang="es">Cama doble · 2 personas</span><span data-lang="en" hidden>Double bed · 2 guests</span><span data-lang="pt" hidden>Cama de casal · 2 pessoas</span></p>
-            <button type="button" class="room-more" data-room-open>
-              <span data-lang="es">Ver más</span><span data-lang="en" hidden>See more</span><span data-lang="pt" hidden>Ver mais</span>
-              <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"/></svg>
-            </button>
           </div>
         </article>
 
-        <article class="room-card" data-room="individuales">
-          <div class="room-card-media">
+        <article class="room-card reveal" data-room="individuales">
+          <button type="button" class="room-card-media" data-room-open aria-label="Ver más sobre Doble Camas Individuales">
             <img src="assets/img/habitaciones/hab-individuales.jpg" alt="Habitación con dos camas individuales" loading="lazy" width="1200" height="800">
-          </div>
+            <span class="room-card-scrim">
+              <span class="room-card-more"><span data-lang="es">Ver más</span><span data-lang="en" hidden>See more</span><span data-lang="pt" hidden>Ver mais</span></span>
+            </span>
+          </button>
           <div class="room-card-body">
             <h3><span data-lang="es">Doble Camas Individuales</span><span data-lang="en" hidden>Twin Room</span><span data-lang="pt" hidden>Quarto Twin</span></h3>
             <p><span data-lang="es">Dos camas individuales · 2 personas</span><span data-lang="en" hidden>Two single beds · 2 guests</span><span data-lang="pt" hidden>Duas camas de solteiro · 2 pessoas</span></p>
-            <button type="button" class="room-more" data-room-open>
-              <span data-lang="es">Ver más</span><span data-lang="en" hidden>See more</span><span data-lang="pt" hidden>Ver mais</span>
-              <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"/></svg>
-            </button>
           </div>
         </article>
 
-        <article class="room-card" data-room="triple">
-          <div class="room-card-media">
+        <article class="room-card reveal" data-room="triple">
+          <button type="button" class="room-card-media" data-room-open aria-label="Ver más sobre Triple">
             <img src="assets/img/habitaciones/hab-triple.jpg" alt="Habitación triple con cama doble y cama individual" loading="lazy" width="1200" height="800">
-          </div>
+            <span class="room-card-scrim">
+              <span class="room-card-more"><span data-lang="es">Ver más</span><span data-lang="en" hidden>See more</span><span data-lang="pt" hidden>Ver mais</span></span>
+            </span>
+          </button>
           <div class="room-card-body">
             <h3><span data-lang="es">Triple</span><span data-lang="en" hidden>Triple Room</span><span data-lang="pt" hidden>Quarto Triplo</span></h3>
             <p><span data-lang="es">Cama doble + cama individual · 3 personas</span><span data-lang="en" hidden>Double bed + single bed · 3 guests</span><span data-lang="pt" hidden>Cama de casal + cama de solteiro · 3 pessoas</span></p>
-            <button type="button" class="room-more" data-room-open>
-              <span data-lang="es">Ver más</span><span data-lang="en" hidden>See more</span><span data-lang="pt" hidden>Ver mais</span>
-              <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"/></svg>
-            </button>
           </div>
         </article>
       </div>
 
-      <div class="amenities-inline">
+      <div class="amenities-inline reveal">
         <p class="amenities-inline-title">
           <span data-lang="es">Todas las habitaciones incluyen</span>
           <span data-lang="en" hidden>All rooms include</span>
@@ -327,14 +324,14 @@
       <p class="kicker center" data-lang="en" hidden>Amenities &amp; Services</p>
       <p class="kicker center" data-lang="pt" hidden>Serviços e Comodidades</p>
 
-      <h2 class="center">
+      <h2 class="center reveal">
         <span data-lang="es">Todo lo que necesitás para desconectar</span>
         <span data-lang="en" hidden>Everything you need to unwind</span>
         <span data-lang="pt" hidden>Tudo o que você precisa para desconectar</span>
       </h2>
 
       <div class="services-groups">
-        <div class="service-group">
+        <div class="service-group reveal">
           <h3><span data-lang="es">Bienestar y pileta</span><span data-lang="en" hidden>Wellness &amp; Pool</span><span data-lang="pt" hidden>Bem-estar e Piscina</span></h3>
           <ul class="service-list">
             <li><svg width="22" height="22" aria-hidden="true"><use href="#icon-pool"/></svg><span data-lang="es">Piscina cubierta-descubierta climatizada todo el año (agua a 28-30°, estructura corrediza)</span><span data-lang="en" hidden>Indoor-outdoor heated pool, open year-round (water at 28-30°C, retractable structure)</span><span data-lang="pt" hidden>Piscina coberta-descoberta climatizada o ano todo (água a 28-30°, estrutura retrátil)</span></li>
@@ -347,7 +344,7 @@
           </ul>
         </div>
 
-        <div class="service-group">
+        <div class="service-group reveal">
           <h3><span data-lang="es">Desayuno y confort</span><span data-lang="en" hidden>Breakfast &amp; Comfort</span><span data-lang="pt" hidden>Café da Manhã e Conforto</span></h3>
           <ul class="service-list">
             <li><svg width="22" height="22" aria-hidden="true"><use href="#icon-breakfast"/></svg><span data-lang="es">Desayuno buffet: panificados, fiambres, tartas, frutas, yogur, cereales, infusiones, untables, mermeladas, chocolatada y jugo de naranja</span><span data-lang="en" hidden>Buffet breakfast: baked goods, cold cuts, savory pies, fruit, yogurt, cereal, hot beverages, spreads, jams, chocolate milk and orange juice</span><span data-lang="pt" hidden>Café da manhã buffet: pães, frios, tortas, frutas, iogurte, cereais, bebidas quentes, pastas, geleias, achocolatado e suco de laranja</span></li>
@@ -357,7 +354,7 @@
           </ul>
         </div>
 
-        <div class="service-group">
+        <div class="service-group reveal">
           <h3><span data-lang="es">Practicidad</span><span data-lang="en" hidden>Practical</span><span data-lang="pt" hidden>Praticidade</span></h3>
           <ul class="service-list">
             <li><svg width="22" height="22" aria-hidden="true"><use href="#icon-wifi"/></svg><span data-lang="es">WiFi en todo el complejo</span><span data-lang="en" hidden>WiFi throughout the property</span><span data-lang="pt" hidden>WiFi em todo o complexo</span></li>
@@ -369,7 +366,7 @@
           </ul>
         </div>
 
-        <div class="service-group">
+        <div class="service-group reveal">
           <h3><span data-lang="es">Políticas</span><span data-lang="en" hidden>Policies</span><span data-lang="pt" hidden>Políticas</span></h3>
           <ul class="service-list">
             <li><svg width="22" height="22" aria-hidden="true"><use href="#icon-smokefree"/></svg><span data-lang="es">Hostería libre de humo</span><span data-lang="en" hidden>Smoke-free hostería</span><span data-lang="pt" hidden>Hospedaria livre de fumo</span></li>
@@ -387,13 +384,13 @@
       <p class="kicker center" data-lang="en" hidden>Gallery</p>
       <p class="kicker center" data-lang="pt" hidden>Galeria</p>
 
-      <h2 class="center">
+      <h2 class="center reveal">
         <span data-lang="es">Chaltu, en imágenes</span>
         <span data-lang="en" hidden>Chaltu, in pictures</span>
         <span data-lang="pt" hidden>Chaltu, em imagens</span>
       </h2>
 
-      <div class="gallery-grid" id="gallery-grid">
+      <div class="gallery-grid reveal" id="gallery-grid">
         <button type="button" class="gallery-item" data-full="assets/img/exterior/fachada-dia.jpg"><img src="assets/img/exterior/fachada-dia.jpg" alt="Fachada de Hostería Chaltu de día" loading="lazy" width="1400" height="1868"></button>
         <button type="button" class="gallery-item" data-full="assets/img/exterior/aerea-playa.jpg"><img src="assets/img/exterior/aerea-playa.jpg" alt="Vista aérea de la playa de Villa Gesell Norte" loading="lazy" width="1600" height="2133"></button>
         <button type="button" class="gallery-item" data-full="assets/img/exterior/aerea-bosque-mar.jpg"><img src="assets/img/exterior/aerea-bosque-mar.jpg" alt="Vista aérea del bosque llegando al mar" loading="lazy" width="1600" height="2133"></button>
@@ -403,6 +400,7 @@
         <button type="button" class="gallery-item" data-full="assets/img/habitaciones/hab-triple.jpg"><img src="assets/img/habitaciones/hab-triple.jpg" alt="Habitación triple" loading="lazy" width="1200" height="800"></button>
         <button type="button" class="gallery-item" data-full="assets/img/habitaciones/hab-bano.jpg"><img src="assets/img/habitaciones/hab-bano.jpg" alt="Baño de una habitación de Hostería Chaltu" loading="lazy" width="1200" height="1600"></button>
         <button type="button" class="gallery-item" data-full="assets/img/servicios/pileta-dia.jpg"><img src="assets/img/servicios/pileta-dia.jpg" alt="Piscina climatizada de día" loading="lazy" width="1400" height="1868"></button>
+        <button type="button" class="gallery-item" data-full="assets/img/servicios/pileta-noche.jpg"><img src="assets/img/servicios/pileta-noche.jpg" alt="Piscina climatizada de noche" loading="lazy" width="1080" height="1350"></button>
         <button type="button" class="gallery-item" data-full="assets/img/servicios/pileta-deck.jpg"><img src="assets/img/servicios/pileta-deck.jpg" alt="Deck y reposeras junto a la piscina" loading="lazy" width="1400" height="1050"></button>
         <button type="button" class="gallery-item" data-full="assets/img/servicios/spa.jpg"><img src="assets/img/servicios/spa.jpg" alt="Sector de spa y ducha" loading="lazy" width="1200" height="1600"></button>
         <button type="button" class="gallery-item" data-full="assets/img/servicios/jacuzzi.jpg"><img src="assets/img/servicios/jacuzzi.jpg" alt="Jacuzzi independiente en el deck exterior" loading="lazy" width="1400" height="1867"></button>
@@ -421,8 +419,8 @@
   <!-- ============ RESEÑAS / RESERVAR ============ -->
   <section class="section booking" id="reservar">
     <div class="container booking-inner">
-      <svg width="30" height="30" class="booking-star" aria-hidden="true"><use href="#icon-star"/></svg>
-      <h2>
+      <svg width="30" height="30" class="booking-star reveal" aria-hidden="true"><use href="#icon-star"/></svg>
+      <h2 class="reveal">
         <span data-lang="es">Reservá tu estadía</span>
         <span data-lang="en" hidden>Book your stay</span>
         <span data-lang="pt" hidden>Reserve sua estadia</span>
@@ -446,7 +444,7 @@
   <!-- ============ UBICACION ============ -->
   <section class="section location" id="ubicacion">
     <div class="container location-grid">
-      <div>
+      <div class="reveal">
         <p class="kicker" data-lang="es">Ubicación</p>
         <p class="kicker" data-lang="en" hidden>Location</p>
         <p class="kicker" data-lang="pt" hidden>Localização</p>
@@ -468,7 +466,7 @@
           <span data-lang="pt" hidden>A 120 metros do mar, em uma área de bosque, a 10 quadras do centro comercial de Villa Gesell.</span>
         </p>
       </div>
-      <div class="map-wrap">
+      <div class="map-wrap reveal">
         <iframe
           src="https://www.google.com/maps?q=Calle+308+e/+Alamedas+201+y+205,+Villa+Gesell,+Buenos+Aires,+Argentina&output=embed"
           loading="lazy"

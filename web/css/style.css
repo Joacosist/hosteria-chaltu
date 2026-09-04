@@ -226,7 +226,7 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: center 52%;
+  object-position: center 40%;
 }
 .hero-overlay {
   position: absolute;
@@ -243,11 +243,15 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   width: 100%;
 }
 .eyebrow {
+  display: inline-block;
   text-transform: uppercase;
-  letter-spacing: .18em;
-  font-size: .78rem;
-  font-weight: 600;
-  margin-bottom: .8em;
+  letter-spacing: .16em;
+  font-size: .85rem;
+  font-weight: 700;
+  margin-bottom: 1em;
+  padding: .4em .9em;
+  border: 1px solid rgba(201,162,125,.55);
+  border-radius: 2px;
   color: var(--madera);
 }
 .hero h1 {
@@ -261,6 +265,10 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   max-width: 42ch;
   font-size: 1.05rem;
   color: rgba(250,247,242,.92);
+}
+.hero-sub strong {
+  color: var(--madera);
+  font-weight: 600;
 }
 .hero-ctas {
   display: flex;
@@ -297,7 +305,12 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   transform: translateY(-4px);
   box-shadow: 0 16px 32px rgba(47,62,53,.16);
 }
-.room-card-media { overflow: hidden; }
+.room-card-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
 .room-card img {
   aspect-ratio: 4/3;
   object-fit: cover;
@@ -307,6 +320,33 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   transition: transform .4s ease;
 }
 .room-card:hover img { transform: scale(1.08); }
+.room-card-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(20,26,22,.38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.room-card-media:hover .room-card-scrim,
+.room-card-media:focus-visible .room-card-scrim { opacity: 1; }
+.room-card-more {
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: .85rem;
+  color: var(--marfil);
+  border: 1px solid rgba(250,247,242,.75);
+  padding: .7em 1.4em;
+  border-radius: 3px;
+  transform: translateY(8px);
+  transition: transform .25s ease;
+}
+.room-card-media:hover .room-card-more,
+.room-card-media:focus-visible .room-card-more { transform: translateY(0); }
 .room-card-body { padding: 20px; }
 .room-card-body h3 {
   font-size: 1.3rem;
@@ -314,21 +354,7 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   letter-spacing: .03em;
   margin-bottom: .3em;
 }
-.room-card-body p { margin: 0 0 1em; color: var(--marron-tierra); font-size: .95rem; }
-.room-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-body);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  font-size: .8rem;
-  color: var(--verde-bosque);
-  padding: 0;
-}
-.room-more svg { transition: transform .2s ease; }
-.room-more:hover svg { transform: translateX(4px); }
+.room-card-body p { margin: 0; color: var(--marron-tierra); font-size: .95rem; }
 
 .amenities-inline {
   margin-top: 3rem;
@@ -660,6 +686,28 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
 }
 .lightbox-prev { left: 6px; }
 .lightbox-next { right: 6px; }
+
+/* ==================== SCROLL REVEAL ==================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+
+.room-grid .reveal:nth-child(2) { transition-delay: .12s; }
+.room-grid .reveal:nth-child(3) { transition-delay: .24s; }
+.services-groups .reveal:nth-child(2) { transition-delay: .1s; }
+.services-groups .reveal:nth-child(3) { transition-delay: .2s; }
+.services-groups .reveal:nth-child(4) { transition-delay: .3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 
 /* ==================== RESPONSIVE ==================== */
 @media (min-width: 640px) {
