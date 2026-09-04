@@ -291,8 +291,22 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(47,62,53,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-.room-card img { aspect-ratio: 4/3; object-fit: cover; object-position: center 70%; width: 100%; height: auto; }
+.room-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(47,62,53,.16);
+}
+.room-card-media { overflow: hidden; }
+.room-card img {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: center 70%;
+  width: 100%;
+  height: auto;
+  transition: transform .4s ease;
+}
+.room-card:hover img { transform: scale(1.08); }
 .room-card-body { padding: 20px; }
 .room-card-body h3 {
   font-size: 1.3rem;
@@ -300,7 +314,21 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   letter-spacing: .03em;
   margin-bottom: .3em;
 }
-.room-card-body p { margin: 0; color: var(--marron-tierra); font-size: .95rem; }
+.room-card-body p { margin: 0 0 1em; color: var(--marron-tierra); font-size: .95rem; }
+.room-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: .8rem;
+  color: var(--verde-bosque);
+  padding: 0;
+}
+.room-more svg { transition: transform .2s ease; }
+.room-more:hover svg { transform: translateX(4px); }
 
 .amenities-inline {
   margin-top: 3rem;
@@ -361,6 +389,7 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   margin-top: 2.5rem;
 }
 .gallery-item {
+  position: relative;
   display: block;
   overflow: hidden;
   border-radius: 3px;
@@ -371,7 +400,45 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   object-fit: cover;
   transition: transform .35s ease;
 }
-.gallery-item:hover img { transform: scale(1.06); }
+.gallery-item:hover img,
+.gallery-item:focus-visible img { transform: scale(1.08); }
+
+.gallery-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,26,22,0) 45%, rgba(20,26,22,.78) 100%);
+  opacity: 0;
+  transition: opacity .25s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+}
+.gallery-item:hover .gallery-scrim,
+.gallery-item:focus-visible .gallery-scrim { opacity: 1; }
+.gallery-caption {
+  color: var(--marfil);
+  font-size: .78rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: left;
+}
+.gallery-zoom {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: rgba(20,26,22,.55);
+  color: var(--marfil);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(.8);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.gallery-item:hover .gallery-zoom,
+.gallery-item:focus-visible .gallery-zoom { opacity: 1; transform: scale(1); }
 
 /* ==================== BOOKING ==================== */
 .booking {
@@ -498,6 +565,70 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
 }
 .whatsapp-fab:hover { transform: scale(1.06); }
 
+/* ==================== ROOM MODAL ==================== */
+.room-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 210;
+  background: rgba(20,26,22,.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+.room-modal-panel {
+  position: relative;
+  background: var(--marfil);
+  border-radius: 6px;
+  max-width: 860px;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  display: grid;
+}
+.room-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(20,26,22,.55);
+  color: var(--marfil);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.room-modal-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.room-modal-body { padding: 28px 24px 32px; }
+.room-modal-body h3 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  margin-bottom: .2em;
+}
+.room-modal-capacity {
+  color: var(--marron-tierra);
+  font-weight: 600;
+  margin-bottom: 1.4em;
+}
+.room-modal-equip-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .82rem;
+  color: var(--verde-bosque);
+  margin-bottom: .8em;
+}
+.room-modal-body .check-list { margin-bottom: 1.8em; }
+
 /* ==================== LIGHTBOX ==================== */
 .lightbox {
   position: fixed;
@@ -534,6 +665,10 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
 @media (min-width: 640px) {
   .gallery-grid { grid-template-columns: repeat(3, 1fr); }
   .booking-ctas { flex-direction: row; justify-content: center; }
+
+  .room-modal-panel { grid-template-columns: 1fr 1fr; max-height: 88vh; }
+  .room-modal-media { height: 100%; }
+  .room-modal-body { overflow-y: auto; max-height: 88vh; }
 }
 
 @media (min-width: 860px) {
