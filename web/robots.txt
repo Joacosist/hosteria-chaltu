@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.hosteriachaltu.com.ar/sitemap.xml

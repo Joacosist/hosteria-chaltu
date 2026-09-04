@@ -6,6 +6,7 @@
   --verde-hoja: #7C8F6A;
   --marron-tierra: #8B6B4C;
   --madera: #C9A27D;
+  --madera-claro: #E3C9A6;
 
   --whatsapp-green: #25D366;
   --whatsapp-green-dark: #128C7E;
@@ -250,9 +251,9 @@ h2.center { text-align: center; margin-left: auto; margin-right: auto; max-width
   font-weight: 700;
   margin-bottom: 1em;
   padding: .4em .9em;
-  border: 1px solid rgba(201,162,125,.55);
+  border: 1px solid rgba(227,201,166,.6);
   border-radius: 2px;
-  color: var(--madera);
+  color: var(--madera-claro);
 }
 .hero h1 {
   font-size: 2.4rem;
